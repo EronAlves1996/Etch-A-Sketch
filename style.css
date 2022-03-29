@@ -29,7 +29,7 @@ body{
   flex: 0.4 2 auto;
 }
 
-.frame-button, #outer-frame-grid{
+.frame-button, #outer-frame-grid, .inner-frame-button{
   border: 2px solid #b2c2bf;
   flex: 1;
   margin: 20px;
@@ -37,4 +37,16 @@ body{
 
 .frame-button{
   margin: 10px;
+  display: flex;
+}
+
+.frame-button button{
+  margin: auto;
+}
+
+#colorpicker .inner-frame-button{
+  margin: auto;
+  width: 20%;
+  height: 58px;
+  flex: 0 1 auto;
 }
