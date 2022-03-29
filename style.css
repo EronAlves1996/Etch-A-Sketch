@@ -1,0 +1,40 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+body{
+  background-color: #25291C;
+  display: flex;
+  height: auto;
+  flex: 1 1 auto;
+  align-items: stretch;
+  padding: 15px;
+}
+
+#menu, #grid{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#menu{
+  flex: 0.4 2 auto;
+}
+
+.frame-button, #outer-frame-grid{
+  border: 2px solid #b2c2bf;
+  flex: 1;
+  margin: 20px;
+}
+
+.frame-button{
+  margin: 10px;
+}
