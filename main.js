@@ -16,11 +16,11 @@ function drawGrid(n){ // n = tamanho da grade
 }
 
 function activateColorMode(color){
+  let changeColor = (e) => e.target.style.backgroundColor = color;
   let grids = document.querySelectorAll('.grid-el');
   grids.forEach(n=>{
-    let y = n.cloneNode(true);
-    n.parentNode.replaceChild(y, n);
-    y.addEventListener('mouseenter', (e)=>e.target.style.backgroundColor = color);
+    n.removeEventListener('mouseenter', changeColor);
+    n.addEventListener('mouseenter', changeColor);
   });
 }
 
@@ -29,6 +29,24 @@ function activateEraser(){
 }
 
 function activateRainbow(){
+  let colors = ['red',
+    'orange',
+    'yellow',
+    'green',
+    'aqua',
+    'blue',
+    'purple'
+  ]
+  let grids = document.querySelectorAll('.grid-el');
+
+  let counter = 0;
+
+  grids.forEach(n=>n.addEventListener('mouseenter', (e)=>{
+    activateColorMode(colors[counter]);
+    counter++;
+    if (counter == 7) counter = 0;
+  }));
+
 
 }
 
