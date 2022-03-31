@@ -51,7 +51,8 @@ function activateRainbow(){
 }
 
 function clearAll(){
-
+  let grids = document.querySelectorAll('.grid-el');
+  grids.forEach(n=>n.style.backgroundColor='white');
 }
 
 function selectColor(){
