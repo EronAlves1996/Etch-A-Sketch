@@ -15,13 +15,29 @@ function drawGrid(n){ // n = tamanho da grade
 
 }
 
-function activateColorMode(color){
-  let changeColor = (e) => e.target.style.backgroundColor = color;
-  let grids = document.querySelectorAll('.grid-el');
+function activateColorMode(color, rainbow = false){
+  if(rainbow) {
+    var rainbowColors = ['red','orange','yellow','green','aqua','blue','purple'],
+      counter = 0;
+  }
+
+  let changeColor = (e) => e.target.style.backgroundColor = color,
+    grids = document.querySelectorAll('.grid-el'),
+    iterateRainbow = () => {
+      color = rainbowColors[counter];
+      counter++;
+      counter >= 7 ? counter = 0 : counter;
+    };
+
   grids.forEach(n=>{
     n.removeEventListener('mouseenter', changeColor);
     n.addEventListener('mouseenter', changeColor);
+    if (rainbow){
+      n.removeEventListener('mouseleave', iterateRainbow);
+      n.addEventListener('mouseleave', iterateRainbow);
+    };
   });
+
 }
 
 function activateEraser(){
@@ -29,25 +45,7 @@ function activateEraser(){
 }
 
 function activateRainbow(){
-  let colors = ['red',
-    'orange',
-    'yellow',
-    'green',
-    'aqua',
-    'blue',
-    'purple'
-  ]
-  let grids = document.querySelectorAll('.grid-el');
-
-  let counter = 0;
-
-  grids.forEach(n=>n.addEventListener('mouseenter', (e)=>{
-    activateColorMode(colors[counter]);
-    counter++;
-    if (counter == 7) counter = 0;
-  }));
-
-
+  activateColorMode('white', true);
 }
 
 function clearAll(){
