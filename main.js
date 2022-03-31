@@ -25,7 +25,7 @@ function activateColorMode(color){
 }
 
 function activateEraser(){
-
+  activateColorMode('white');
 }
 
 function activateRainbow(){
