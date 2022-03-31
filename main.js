@@ -5,6 +5,7 @@ for(let i=0;i<16;i++){
   for(let j=0;j<16;j++){
     let subgrid = document.createElement('div');
     subgrid.className = 'grid-el';
+    subgrid.addEventListener('mouseenter', ()=>subgrid.style.backgroundColor="black");
     intergrid.appendChild(subgrid);
   }
   grid.appendChild(intergrid);
