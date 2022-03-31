@@ -8,17 +8,20 @@ function drawGrid(n){ // n = tamanho da grade
     for(let j=0;j<n;j++){
       let subgrid = document.createElement('div');
       subgrid.className = 'grid-el';
-      subgrid.addEventListener('mouseenter', ()=>subgrid.style.backgroundColor="black");
       intergrid.appendChild(subgrid);
     }
     grid.appendChild(intergrid);
   }
 
-
 }
 
-function activateColorMode(){
-
+function activateColorMode(color){
+  let grids = document.querySelectorAll('.grid-el');
+  grids.forEach(n=>{
+    let y = n.cloneNode(true);
+    n.parentNode.replaceChild(y, n);
+    y.addEventListener('mouseenter', (e)=>e.target.style.backgroundColor = color);
+  });
 }
 
 function activateEraser(){
