@@ -48,6 +48,9 @@ body{
   background-color: #e6e49f;
   color: #584c54;
   font-size: 140%;
+  border-radius: 12px;
+  border: 2px solid #22422f;
+  box-shadow: 0.5px 0.5px 3px #b2c2bf;
 }
 
 .inner-frame-button{
@@ -55,8 +58,7 @@ body{
   height: 50px;
   flex: 0 1 auto;
   margin: auto;
-  border: 2px solid #22422f;
-  box-shadow: 0.5px 0.5px 3px #b2c2bf;
+  border: 0;
 }
 
 #colorpicker .inner-frame-button{
@@ -64,4 +66,26 @@ body{
   width: 20%;
   height: 58px;
   flex: 0 1 auto;
+}
+
+#inner-frame-div, #inner-frame-div > div{
+  display: flex;
+}
+
+#inner-frame-div{
+  flex-direction: column;
+  flex: 1;
+}
+
+#inner-frame-div>div{
+  flex:1
+}
+
+#outer-frame-grid{
+  display: flex;
+}
+
+.grid-el{
+  flex: 1;
+  background-color: white;
 }
