@@ -68,8 +68,8 @@ function activateProgram(){
     activateColorMode(currentColor);
   });
 
-  colorMode.addEventListener('click', ()=> activateColorMode(currentColor));
-
+  colorMode.addEventListener('click', () => activateColorMode(currentColor));
+  
   eraser.addEventListener('click', ()=> activateColorMode('white'));
 
   rainbow.addEventListener('click', ()=>activateColorMode('white', true));
