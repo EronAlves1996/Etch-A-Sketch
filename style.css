@@ -31,7 +31,6 @@ body{
 }
 
 .frame-button, #outer-frame-grid, .inner-frame-button{
-  border: 2px solid #b2c2bf;
   flex: 1;
   margin: 20px;
 }
