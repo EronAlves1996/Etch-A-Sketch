@@ -54,6 +54,12 @@ body{
   box-shadow: 0.5px 0.5px 3px #b2c2bf;
 }
 
+h1{
+  font-size: 200%;
+  color: #e6e49f;
+  text-align: center;
+}
+
 .inner-frame-button{
   width: 258px;
   height: 50px;

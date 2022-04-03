@@ -1,4 +1,4 @@
-function drawGrid(n){ // n = tamanho da grade
+function drawGrid(n, currentColor){ // n = tamanho da grade
   let grid = document.querySelector('#draw-grid');
   
   grid.innerHTML = "";
@@ -13,6 +13,7 @@ function drawGrid(n){ // n = tamanho da grade
     grid.appendChild(intergrid);
   }
 
+  activateColorMode(currentColor);
 }
 
 function activateColorMode(color, rainbow = false){
@@ -57,7 +58,7 @@ function activateProgram(){
 
   const animate = [grid, colorMode, eraser, rainbow, clearAllBtn, colorPicker, newGrid];
 
-  drawGrid(16);
+  drawGrid(16, currentColor);
 
   animate.forEach((n,i)=>{
     setTimeout(()=>{
@@ -83,7 +84,7 @@ function activateProgram(){
   newGrid.addEventListener('click', ()=>{
     let n = prompt('Insert the scale of the grid!');
     n = Number(n);
-    drawGrid(n);
+    drawGrid(n, currentColor);
   })
 }
 
