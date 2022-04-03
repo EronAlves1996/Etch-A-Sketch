@@ -8,35 +8,35 @@
   <body>
     <div id="menu">
       <div id="colorpicker" class="frame-button">
-         <div class="inner-frame-button">
+         <div class="inner-frame-button initial">
            <input type="color" id="color-picker" value="#000000">
          </div>
       </div>
 
       <div class="frame-button">
-        <div class='inner-frame-button'>        
-          <button class="initial" id="color-mode">
+        <div class='inner-frame-button initial'>        
+          <button id="color-mode">
             Color Mode
           </button>
         </div>
       </div>
       <div class="frame-button">
-        <div class='inner-frame-button'>        
-          <button class="initial" id="eraser">          
+        <div class='inner-frame-button initial'>        
+          <button id="eraser">          
             Eraser        
           </button>
         </div>
       </div>
       <div class="frame-button">
-        <div class="inner-frame-button">        
-          <button class="initial" id="rainbow">          
+        <div class="inner-frame-button initial">        
+          <button id="rainbow">          
             Rainbow        
           </button>
         </div>
       </div>
       <div class="frame-button">
-        <div class="inner-frame-button">
-          <button class="initial" id="clear-all">
+        <div class="inner-frame-button initial">
+          <button id="clear-all">
             Clear All
           </button>
         </div>
@@ -45,14 +45,16 @@
 
     <div id="grid">
       <div class="frame-button">
-        <div class='inner-frame-button'>
-          <button class="initial" id="new-grid">
+        <div class='inner-frame-button initial'>
+          <button id="new-grid">
             New Grid
           </button>
         </div>
       </div>
       <div id="outer-frame-grid">
-        <div class="initial" id="inner-frame-div">
+        <div class="initial" id='inner-frame-div'>
+          <div id="draw-grid">
+          </div>
         </div>
       </div>
     </div>

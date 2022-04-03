@@ -1,5 +1,5 @@
 function drawGrid(n){ // n = tamanho da grade
-  let grid = document.querySelector('#inner-frame-div');
+  let grid = document.querySelector('#draw-grid');
   
   grid.innerHTML = "";
 
@@ -40,14 +40,6 @@ function activateColorMode(color, rainbow = false){
 
 }
 
-function activateEraser(){
-  activateColorMode('white');
-}
-
-function activateRainbow(){
-  activateColorMode('white', true);
-}
-
 function clearAll(){
   let grids = document.querySelectorAll('.grid-el');
   grids.forEach(n=>n.style.backgroundColor='white');
@@ -60,8 +52,20 @@ function activateProgram(){
     rainbow = document.querySelector('#rainbow'),
     clearAllBtn = document.querySelector('#clear-all'),
     newGrid = document.querySelector('#new-grid'),
-    grid = document.querySelector('#inner-frame-div'),
+    grid = document.querySelector('#draw-grid'),
     currentColor = "black";
+
+  const animate = [grid, colorMode, eraser, rainbow, clearAllBtn, colorPicker, newGrid];
+
+  drawGrid(16);
+
+  animate.forEach((n,i)=>{
+    setTimeout(()=>{
+      n.parentNode.classList.remove('initial');
+      n.parentNode.classList.add('final');
+      setTimeout(()=>n.parentNode.classList.remove('final'),100);
+    }, (i+1)*200);
+  });
 
   colorPicker.addEventListener('change', ()=> {
     currentColor = colorPicker.value;
@@ -82,3 +86,5 @@ function activateProgram(){
     drawGrid(n);
   })
 }
+
+addEventListener('DOMContentLoaded', activateProgram);

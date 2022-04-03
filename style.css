@@ -27,6 +27,7 @@ body{
 
 #menu{
   flex: 0.3 2 auto;
+  width: 200px;
 }
 
 .frame-button, #outer-frame-grid, .inner-frame-button{
@@ -68,17 +69,30 @@ body{
   flex: 0 1 auto;
 }
 
-#inner-frame-div, #inner-frame-div > div{
+#inner-frame-div, #outer-frame-grid, #draw-grid, #draw-grid>div{
   display: flex;
+}
+
+#draw-grid{
+  flex-direction: column;
+  flex: 1;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+
+#draw-grid>div{
+  flex: 1;
 }
 
 #inner-frame-div{
   flex-direction: column;
   flex: 1;
-}
-
-#inner-frame-div>div{
-  flex:1
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  opacity: 1;
+  margin: auto;
 }
 
 #outer-frame-grid{
@@ -94,4 +108,15 @@ body{
   width: 100%;
   height: 100%;
   border: 0px;
+}
+
+.initial, .initial#inner-frame-div, #colorpicker > .initial{
+  width: 1%;
+  max-width: 1%;
+  height: 1%;
+  opacity: 0;
+}
+
+.final{
+  transition: 1s;
 }
